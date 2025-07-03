@@ -1,0 +1,14 @@
+networks:
+  zapnet:
+    external: true
+    
+services:
+  web:
+    build: .
+    container_name: django_app
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    networks:
+      - zapnet
